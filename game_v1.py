@@ -4,10 +4,11 @@ from tkinter import *
 import random
 import time
 
+# Idenficação de nível by input
 level = int(input("Qual nível você gostaria de jogar? 1/2/3/4/5 \n"))
 length = 500/level
 
-
+# Configurações de tela
 root = Tk()
 root.title("Ping Pong")
 root.resizable(0,0)
@@ -131,11 +132,11 @@ def score():
 def game_over():
     canvas.itemconfig(game, text="Game over!")
 
-
+# HUD
 Barra = Barra(canvas, "orange")
 Bola = Bola(canvas, Barra, "purple")
 
-
+# Contador de pontos
 score_now = canvas.create_text(430, 20, text="Pontos: " + str(count), fill = "green", font=("Arial", 16))
 game = canvas.create_text(400, 300, text=" ", fill="red", font=("Arial", 40))
 
